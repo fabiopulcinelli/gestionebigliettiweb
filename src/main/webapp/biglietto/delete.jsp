@@ -49,24 +49,25 @@
 					    	
 					    </div>
 					    
-					    <div class='card-footer row container-fluid' >
-					    	 <div class='col'>
+					    <div class='card-footer' >
+					    	<div class='row'>
+					    	 <div class='col '>
 					        	<a href="ListBigliettiServlet" class='btn btn-outline-secondary' style='width:80px'>
 					          	  <i class='fa fa-chevron-left'></i> Back
 					       		 </a>
 					       	 </div>
 					        
-					        <div class='col'>
+					        <div class='col-1 '>
 						        <form action="ExecuteDeleteBigliettoServlet" method="post">
 									<input type="submit" value="Elimina" class='btn btn-outline-danger fa fa-chevron-left text-danger' style='width:80px'>
 									<input type="hidden" name="idBiglietto" value="<%=bigliettoInPagina.getId() %>">
 								</form>
 							</div>
+							</div>
 					    </div>
 					<!-- end card -->
 					</div>	
-			  
-			    
+
 			  <!-- end container -->  
 			  </div>
 			  
