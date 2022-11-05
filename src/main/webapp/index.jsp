@@ -53,7 +53,7 @@
 				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietti</h1>
 				        <p class="col-md-8 fs-4">Questo sito si occupera' della gestione dei biglietti: permettera' quindi la stampa 
 				        di tutti i biglietti, la loro aggiunta ed eliminazione, infine la ricerca per campi. </p>
-				        <a class="btn btn-primary btn-lg" href="ListArticoliServlet">Lista Elementi</a>
+				        <a class="btn btn-warning btn-lg" href="ListBigliettiServlet">Lista Elementi</a>
 				      </div>
 			    </div>
 			    
@@ -63,34 +63,34 @@
 			  <div class="container px-4 py-5" id="featured-3">
 			    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
 			      <div class="feature col">
-			        <div class="feature-icon bg-primary bg-gradient">
+			        <div class="feature-icon bg-warning bg-gradient">
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
 			        </div>
 			        <h2>Lista Elementi</h2>
 			        <p>lista completa di tutti i biglietti nel database.</p>
-			        <a href="ListArticoliServlet" class="icon-link">
+			        <a href="ListBigliettiServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
 			      <div class="feature col">
-			        <div class="feature-icon bg-primary bg-gradient">
+			        <div class="feature-icon bg-warning bg-gradient">
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
 			        </div>
 			        <h2>Inserisci Nuovo</h2>
 			        <p>aggiungi un nuovo biglietto.</p>
-			        <a href="PrepareInsertArticoloServlet" class="icon-link">
+			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
 			      <div class="feature col">
-			        <div class="feature-icon bg-primary bg-gradient">
+			        <div class="feature-icon bg-warning bg-gradient">
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
 			        </div>
 			        <h2>Ricerca Biglietto</h2>
 			        <p>ricerca dei biglietti in particolare selezionando dei campi a piacere.</p>
-			        <a href="PrepareSearchArticoloServlet" class="icon-link">
+			        <a href="PrepareSearchBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
