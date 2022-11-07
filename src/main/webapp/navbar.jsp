@@ -1,3 +1,9 @@
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<!doctype html>
+<html lang="it" class="h-100" >
 <header>
   <!-- Fixed navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-warning" aria-label="Eighth navbar example">
@@ -29,8 +35,14 @@
       </div>
       <div class="col-md-3 text-end">
         <ul class="nav navbar-nav navbar-right">
-            <li><p class="navbar-text text-dark">Utente: ${userInfo.username }(${userInfo.nome } ${userInfo.cognome })
-            <a class="btn btn-warning text-danger" href="<%= request.getContextPath()%>/LogoutServlet">Logout</a></p> 
+            
+            <c:if test="${userInfo != null}">
+            	<li><p class="navbar-text text-dark">Utente: ${userInfo.username }(${userInfo.nome } ${userInfo.cognome })
+   				<a class="btn btn-warning text-danger" href="<%= request.getContextPath()%>/LogoutServlet">Logout</a></p> 
+			</c:if>
+			<c:if test="${userInfo == null}">
+   				<a class="btn btn-warning text-danger" href="<%= request.getContextPath()%>/login.jsp">Login</a></p> 
+			</c:if>
             </li>
           </ul>
       </div>

@@ -18,7 +18,7 @@ import it.prova.gestionebigliettiweb.model.Utente;
 public class CheckAuthFilter implements Filter {
 
 	private static final String HOME_PATH = "";
-	private static final String[] EXCLUDED_URLS = {"/login.jsp","/LoginServlet","/LogoutServlet","/css/","/js/"};
+	private static final String[] EXCLUDED_URLS = {"/login.jsp","/LoginServlet","/LogoutServlet","/css/","/js/", "/index.jsp"};
 	private static final String[] PROTECTED_URLS = {"/admin/"};
 
 	public CheckAuthFilter() {
