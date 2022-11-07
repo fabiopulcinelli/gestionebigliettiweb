@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.math.NumberUtils;
+
 import it.prova.gestionebigliettiweb.model.Biglietto;
 import it.prova.gestionebigliettiweb.service.MyServiceFactory;
 import it.prova.gestionebigliettiweb.utility.UtilityBigliettoForm;
@@ -37,6 +39,13 @@ public class ExecuteModificaBigliettoServlet extends HttpServlet {
 		// che per inserire) e faccio il binding dei parametri
 		Biglietto bigliettoInstance = UtilityBigliettoForm.createBigliettoFromParams(provenienzaInputParam,
 				destinazioneInputParam, prezzoInputStringParam, dataStringParam);
+		
+		if (!NumberUtils.isCreatable(request.getParameter("id"))) {
+			// qui ci andrebbe un messaggio nei file di log costruito ad hoc se fosse attivo
+			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			return;
+		}
 		
 		bigliettoInstance.setId(Long.parseLong(request.getParameter("id")));
 		

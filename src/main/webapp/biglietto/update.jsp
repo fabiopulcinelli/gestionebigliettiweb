@@ -1,6 +1,6 @@
 <!doctype html>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="it.prova.gestionebigliettiweb.model.Biglietto"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="it" class="h-100" >
 	 <head>
 	 
@@ -40,33 +40,34 @@
 		
 							<form method="post" action="ExecuteModificaBigliettoServlet" class="row g-3" novalidate="novalidate">
 							
-								<% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("modifica_biglietto_attr"); %>
+								<c:set var="bigliettoInPagina" value = "${modifica_biglietto_attr}"/>
 							
 								<div class="col-md-6">
 									<label for="provenienza" class="form-label">Provenienza <span class="text-danger"></span></label>
 									<input type="text" name="provenienza" id="provenienza" class="form-control" placeholder="Inserire il provenienza"  
-										value="<%=bigliettoInPagina.getProvenienza()!=null?bigliettoInPagina.getProvenienza():"" %>" >
+										value="${bigliettoInPagina.provenienza}" >
 								</div>
 								
 								<div class="col-md-6">
 									<label for="destinazione" class="form-label">Destinazione <span class="text-danger"></span></label>
 									<input type="text" name="destinazione" id="destinazione" class="form-control" placeholder="Inserire la destinazione"  
-										value="<%=bigliettoInPagina.getDestinazione()!=null?bigliettoInPagina.getDestinazione():"" %>" >
+										value="${bigliettoInPagina.destinazione}" >
 								</div>
 							
 								<div class="col-md-6">
 									<label for="prezzo" class="form-label">Prezzo <span class="text-danger"></span></label>
 									<input type="number" class="form-control" name="prezzo" id="prezzo" placeholder="Inserire prezzo" 
-									value="<%=bigliettoInPagina.getPrezzo()!=null?bigliettoInPagina.getPrezzo():"" %>" >
+									value="${bigliettoInPagina.prezzo}" >
 								</div>
 								
 								<div class="col-md-3">
 									<label for="data" class="form-label">Data<span class="text-danger"></span></label>
+									<fmt:formatDate pattern = "yyyy-MM-dd" value = "${bigliettoInPagina.data}" var="data"/>
 									<input class="form-control"  name="data" id="data" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
-										value="<%=bigliettoInPagina.getData()!=null? new SimpleDateFormat("yyyy-MM-dd").format(bigliettoInPagina.getData()):""  %>" />
+										value="${data}"  />
 								</div>
 								
-								<input type="hidden" name="id" value="<%=bigliettoInPagina.getId() %>">
+								<input type="hidden" name="id" value="${bigliettoInPagina.id}">
 								
 							<div class="col-12">
 								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-warning">Conferma</button>
