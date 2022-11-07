@@ -68,7 +68,7 @@
 			        </div>
 			        <h2>Lista Elementi</h2>
 			        <p>lista completa di tutti i biglietti nel database.</p>
-			        <a href="ListBigliettiServlet" class="icon-link">
+			        <a href="${pageContext.request.contextPath }/ListBigliettiServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
@@ -79,7 +79,7 @@
 			        </div>
 			        <h2>Inserisci Nuovo</h2>
 			        <p>aggiungi un nuovo biglietto.</p>
-			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
+			        <a href="${pageContext.request.contextPath }/admin/PrepareInsertBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>

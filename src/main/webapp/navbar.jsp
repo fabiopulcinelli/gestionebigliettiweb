@@ -28,7 +28,11 @@
         </ul>
       </div>
       <div class="col-md-3 text-end">
-        <a  class="btn btn-warning" href="login.jsp">Login</a>
+        <ul class="nav navbar-nav navbar-right">
+            <li><p class="navbar-text text-dark">Utente: ${userInfo.username }(${userInfo.nome } ${userInfo.cognome })
+            <a class="btn btn-warning text-danger" href="<%= request.getContextPath()%>/LogoutServlet">Logout</a></p> 
+            </li>
+          </ul>
       </div>
     </div>
   </nav>
